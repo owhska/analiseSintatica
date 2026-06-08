@@ -1,0 +1,48 @@
+<programa> ::= program <identificador> ; <bloco> .
+<bloco> ::= <parte-declaracoes> <comando-composto>
+<parte-declaracoes> ::= var <declaracao> { ; <declaracao> } ;
+<declaracao> ::= <lista-identificadores> : <tipo>
+<lista-identificadores> ::= x, y
+<tipo> ::= integer
+<declaracao> ::= <lista-identificadores> : <tipo>
+<lista-identificadores> ::= z
+<tipo> ::= real
+<comando-composto> ::= begin <comando> { ; <comando> } end
+<atribuicao> ::= x := <expressao>
+<variavel> ::= x
+<fator> ::= 10
+<atribuicao> ::= y := <expressao>
+<variavel> ::= y
+<fator> ::= 20
+<atribuicao> ::= z := <expressao>
+<variavel> ::= z
+<variavel> ::= x
+<variavel> ::= y
+<fator> ::= 2.5
+<comando-condicional> ::= if <expressao> then <comando>
+<variavel> ::= x
+<relacao> ::= >
+<variavel> ::= y
+<atribuicao> ::= x := <expressao>
+<variavel> ::= x
+<variavel> ::= x
+<fator> ::= 1
+else <comando>
+<atribuicao> ::= y := <expressao>
+<variavel> ::= y
+<variavel> ::= y
+<fator> ::= 1
+<comando-repetitivo> ::= while <expressao> do <comando>
+<variavel> ::= z
+<relacao> ::= <=
+<fator> ::= 100
+<comando-composto> ::= begin <comando> { ; <comando> } end
+<atribuicao> ::= z := <expressao>
+<variavel> ::= z
+<variavel> ::= z
+<fator> ::= 1.5
+<atribuicao> ::= x := <expressao>
+<variavel> ::= x
+<variavel> ::= x
+<fator> ::= 2
+ok
