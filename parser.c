@@ -163,6 +163,7 @@ static void comandoRepetitivo() {
 }
 
 static void expressao() {
+    fprintf(out, "<expressao> ::= <expressao-simples> [ <relacao> <expressao-simples> ]\n");
     expressaoSimples();
     if (tokenCorrente.type == OP_EQ || tokenCorrente.type == OP_NE ||
         tokenCorrente.type == OP_LT || tokenCorrente.type == OP_LE ||
@@ -183,6 +184,7 @@ static void relacao() {
 }
 
 static void expressaoSimples() {
+    fprintf(out, "<expressao-simples> ::= [ +|- ] <termo> { (+|-) <termo> }\n");
     if (tokenCorrente.type == OP_AD)
         casaToken(OP_AD);
     else if (tokenCorrente.type == OP_MIN)
@@ -196,6 +198,7 @@ static void expressaoSimples() {
 }
 
 static void termo() {
+    fprintf(out, "<termo> ::= <fator> { (*|/) <fator> }\n");
     fator();
     while (tokenCorrente.type == OP_MUL || tokenCorrente.type == OP_DIV) {
         TokenType t = tokenCorrente.type;
@@ -243,7 +246,7 @@ int parse(char *codigo) {
     tokenCorrente = getNextToken(src, &pos, &cur_linha, &cur_coluna);
     programa();
 
-    if (tokenCorrente.type != ERRO || strcmp(tokenCorrente.lexema, "EOF") != 0) {
+    if (tokenCorrente.type != ERRO && strcmp(tokenCorrente.lexema, "EOF") != 0) {
         fprintf(out,    "%d:token nao esperado [%s].\n", tokenCorrente.linha, tokenCorrente.lexema);
         fprintf(stderr, "%d:token nao esperado [%s].\n", tokenCorrente.linha, tokenCorrente.lexema);
         fclose(out);
