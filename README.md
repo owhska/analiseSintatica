@@ -59,6 +59,9 @@ onde `nn` é o número da linha e `lex` é o lexema encontrado. A mensagem é im
 <comando-composto> ::= begin <comando> { ; <comando> } end
 <atribuicao> ::= x := <expressao>
 <variavel> ::= x
+<expressao> ::= <expressao-simples> [ <relacao> <expressao-simples> ]
+<expressao-simples> ::= [ +|- ] <termo> { (+|-) <termo> }
+<termo> ::= <fator> { (*|/) <fator> }
 <fator> ::= 10
 ...
 ok
