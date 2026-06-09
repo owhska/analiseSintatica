@@ -1,4 +1,4 @@
-# Analisador Sintático — MicroPascal
+# Analisador Sintático — MicroPascal 
 
 Trabalho prático da disciplina de Linguagens Formais, Autômatos e Compiladores — UCB, 1° semestre de 2026.
 
